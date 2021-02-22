@@ -1,0 +1,166 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+main{
+	background-color: lightgreen;
+	font-family: 'Exo 2', sans-serif;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.favorite_cities{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.favorite_cities li{
+	list-style-type: none;
+}
+
+div.favorite_city{
+	font-family: 'Exo 2', sans-serif;
+	margin: auto;
+	padding: 0;
+	width: 500px;
+}
+
+.favorite_city_header{
+	justify-content: space-between;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.favorite_city_header h3{
+	color: #718186;
+	font-size: 35px;
+	margin: 0;
+	overflow: hidden;
+	padding: auto;
+	text-overflow: ellipsis;
+	width: 280px;
+
+}
+
+.favorite_city_header span{
+	color: #7c7c7c;
+	font-size: 45px;
+	font-family: 'Exo 2', sans-serif;
+	text-align: center;
+	width: 120px;
+}
+
+.favorite_city_header img{
+	width: 50px;
+}
+
+.favorite_city_header button{
+	background-color: #718186;
+	border-radius: 25px;
+	border-width: 0;
+	color: #eef9fd;
+	font-size: 25px;
+	width: 50px;
+}
+
+.favorite_city ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.favorite_city ul li{
+	align-content: center;
+	background-color: #a7afb1;
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0 10px 0;
+	padding: 5px;
+}
+
+.favorite_city ul li h4{
+	color: #eef9fd;
+	font-family: "Arial";
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.favorite_city ul li p{
+	color: #eef9fd;
+	font-family: "Arial";
+	font-size: 20px;
+	margin: auto 0 auto 0;
+	text-align: right;
+}
+
+
+@media only screen and (max-width: 600px){
+	main{
+		margin: 0;
+	}
+
+	.favorite_cities{
+		justify-content: center;
+	}
+
+	div.favorite_city{
+		width: 300px;
+	}
+
+	.favorite_city_header h3{
+		font-size: 25px;
+		width: 130px;
+	}
+
+	.favorite_city_header span{
+		font-size: 30px;
+		width: 80px;
+	}
+
+	.favorite_city_header img{
+		width: 45px;
+	}
+
+	.favorite_city_header button{
+		width: 45px;
+	}
+
+	.favorite_city ul li h4{
+		font-size: 15px;
+	}
+
+	.favorite_city ul li p{
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px){
+	main{
+		margin: 5%;
+	}
+
+	.favorite_cities{
+		justify-content: center;
+	}
+
+
+	div.favorite_city{
+		margin: 0;
+	}
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1450px){
+	.favorite_cities{
+		justify-content: center;
+	}
+
+	div.favorite_city{
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+}
