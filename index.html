@@ -11,7 +11,10 @@
 	<main>
 		<div class="top_container">
 			<h2 class="local_weather">Погода здесь</h2>
-			<button class="update_location">Обновить геолокацию</button>
+			<button class="update_location">
+				<p class="update_text">Обновить геолокацию</p>
+				<p class="update_icon">🗘</p>
+			</button>
 		</div>
 		
 		<div class="current_location">
@@ -44,8 +47,10 @@
 		
 		<div class="middle_container">
 			<h2 class="favorites">Избранное</h2>
-			<input class="new_city" type="text" placeholder="Добавить новый город">
-			<button class="add_button">+</button>
+			<div class="add_city">
+				<input class="new_city" placeholder="Добавить новый город">
+				<button class="add_button">+</button>
+			</div>
 		</div>
 		
 		<ul class="favorite_cities">
