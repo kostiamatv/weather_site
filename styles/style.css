@@ -9,6 +9,12 @@ main{
 	margin: 0 15%;
 }
 
+h1{
+	color: #7c7c7c;
+	font-size: 50px;
+	margin: 0;
+}
+
 h2{
 	color: #7c7c7c;
 	font-size: 50px;
@@ -35,7 +41,6 @@ h2{
 
 .update_icon{
 	display: none;
-	font-size: 35px;
 }
 
 .update_text{
@@ -53,7 +58,7 @@ h2{
 	padding: 0;
 }
 
-.current_location h3{
+.current_location h2{
 	color: #718186;
 	font-size: 55px;
 	grid-area: header;
@@ -94,7 +99,7 @@ h2{
 	padding: 5px;
 }
 
-.current_location ul li h4{
+.current_location ul li h3{
 	color: #eef9fd;
 	font-family: "Arial";
 	font-size: 20px;
@@ -142,10 +147,9 @@ h2{
 	color: #eef9fd;
 	font-size: 25px;
 	height: 50px;
+	margin-left: 5px;
 	width: 50px;
 }
-
-
 
 .favorite_cities{
 	display: flex;
@@ -160,16 +164,18 @@ h2{
 	list-style-type: none;
 }
 
-div.favorite_city{
+.favorite_city{
 	margin: auto;
 	padding: 0;
 	width: 500px;
 }
 
 .favorite_city_header{
-	justify-content: space-between;
 	display: flex;
 	flex-flow: row wrap;
+	height: 50px;
+	justify-content: space-between;
+
 }
 
 .favorite_city_header h3{
@@ -234,8 +240,23 @@ div.favorite_city{
 	text-align: right;
 }
 
-
 @media only screen and (max-width: 1450px){
+	main{
+		width: 90%;
+		margin: 0 5%;
+	}
+}
+
+
+
+@media only screen and (max-width: 1000px){
+	main{
+		width: 100%;
+		margin: 0 0;
+	}
+}
+
+@media only screen and (max-width: 768px){
 	main{
 		width: 500px;
 		margin: 0 auto;
@@ -257,7 +278,8 @@ div.favorite_city{
 
 	.update_icon{
 		display: block;
-		margin: 0;
+		margin: auto;
+		width: 40px;
 	}
 
 	.update_text{
@@ -295,12 +317,95 @@ div.favorite_city{
 		width: 100%;
 	}
 
+}
+
+
+@media only screen and (min-width: 620px) and (max-width: 768px){
 	.favorite_cities{
 		justify-content: center;
 	}
 
 	div.favorite_city{
-		margin-left: 50px;
-		margin-right: 50px;
+		margin: 0 50px;
 	}
+}
+
+@media only screen and (max-width: 620px){
+	main{
+		width: 100%;
+		margin: 0;
+	}
+
+	.top_container{
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	.top_container h1{
+		font-size: 35px;
+	}
+
+	h2{
+		font-size: 30px;
+	}
+
+	.current_location h2{
+		font-size: 30px;
+	}
+
+	.current_location img{
+		height: 100px;
+		margin: auto;
+		width: 100px;
+	}
+
+	.current_location span{
+		font-size: 100px;
+	}
+
+	.middle_container{
+		margin: 0;
+		width: 100%;
+	}
+
+	.add_city input{
+		font-size: 20px;
+	}
+
+	.favorite_cities{
+		margin: 0;
+		width: 100%;
+	}
+
+	.favorite_cities li{
+		margin: 0;
+		width: 100%;
+	}
+
+	.favorite_city{
+		margin: 0;
+		width: 100%;
+	}
+
+	.favorite_city ul li{
+		padding: 0;
+	}
+
+	.favorite_city_header{
+		flex-flow: row wrap;
+		width: 100%;
+	}
+
+	.favorite_city_header h3{
+		font-size: 25px;
+		margin: auto 0;
+		width: 40%;
+	}
+
+	.favorite_city_header span{
+		font-size: 25px;
+		margin: auto 0;
+		width: 20%;
+	}
+
 }
