@@ -249,24 +249,59 @@ h2{
 
 
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1150px){
 	main{
 		width: 100%;
 		margin: 0 0;
 	}
+
+	.favorite_city{
+		margin: 0;
+		width: 350px;
+	}
+
+	.favorite_city_header{
+		flex-flow: row wrap;
+		width: 100%;
+	}
+
+	.favorite_cities{
+		margin: 0;
+		width: 100%;
+	}
+
+	.favorite_cities li{
+		margin: 0 10px;
+		width: 350px;
+	}
+
+	.favorite_city_header{
+		width: 350px;
+	}
+
+	.favorite_city ul li{
+		margin: none;
+		width: 340px;
+	}
+	
+	.favorite_city_header h3{
+		font-size: 25px;
+		margin: auto 0;
+		width: 40%;
+	}
+
+	.favorite_city_header span{
+		font-size: 25px;
+		margin: auto 0;
+		width: 20%;
+	}
+
+
+
 }
 
 @media only screen and (max-width: 768px){
-	main{
-		width: 500px;
-		margin: 0 auto;
-	}
 
-	.top_container{
-		justify-content: space-between;
-		margin: 20px auto;
-		width: 500px;
-	}
 
 	.update_location{
 		border-radius: 25px;
@@ -317,20 +352,10 @@ h2{
 		width: 100%;
 	}
 
-}
-
-
-@media only screen and (min-width: 620px) and (max-width: 768px){
-	.favorite_cities{
+	.favorite_cities {
 		justify-content: center;
 	}
 
-	div.favorite_city{
-		margin: 0 50px;
-	}
-}
-
-@media only screen and (max-width: 620px){
 	main{
 		width: 100%;
 		margin: 0;
@@ -383,12 +408,13 @@ h2{
 	}
 
 	.favorite_city{
-		margin: 0;
+		margin: 20px 0;
 		width: 100%;
 	}
 
 	.favorite_city ul li{
 		padding: 0;
+		width: 100%;
 	}
 
 	.favorite_city_header{
