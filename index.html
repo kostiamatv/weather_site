@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="styles/style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet"> 
+	<script type="text/javascript" src="js/script.js"></script>
 	<!-- <meta http-equiv="refresh" content="1"> -->
 </head>
 <body>
@@ -18,29 +19,29 @@
 		</div>
 		
 		<div class="current_location">
-			<h2>Saint Petersburg</h2>
-			<img alt="weather icon" src="images/tmp_icon.png">
-			<span>8°C</span>
+			<h2 id="main_city_name">??????</h2>
+			<img alt="weather icon" id="weather_icon" src="images/tmp_icon.png">
+			<span id="temperature">???C</span>
 			<ul>
 				<li>
 					<h3>Ветер</h3>
-					<p>Moderate breeze, 6.0 m/s, N-NW</p>
+					<p id="wind">???????????</p>
 				</li>
 				<li>
 					<h3>Облачность</h3>
-					<p>Broken clouds</p>
+					<p id="cloudiness">????????????</p>
 				</li>
 				<li>
 					<h3>Давление</h3>
-					<p>1013 hpa</p>
+					<p id="pressure">????????</p>
 				</li>
 				<li>
 					<h3>Влажность</h3>
-					<p>52 %</p>
+					<p id="humidity">?????%</p>
 				</li>
 				<li>
 					<h3>Координаты</h4>
-					<p>[59.88, 30.42]</p>
+					<p id="coords">??????</p>
 				</li>
 			</ul>
 		</div>
@@ -54,209 +55,42 @@
 		</div>
 		
 		<ul class="favorite_cities">
-			<li>
-				<div class="favorite_city">
-					<div class="favorite_city_header">
-						<h3>Moscow</h3>
-						<span>-35°C</span>
-						<img alt="weather icon" src="images/tmp_icon.png">
-						<button class="remove_button">X</button>
+			<template class="favorite_city_template">
+				<li>
+					<div class="favorite_city">
+						<div class="favorite_city_header">
+							<h3 id="favorite_city_name">???</h3>
+							<span id="favorite_city_temperature">???°C</span>
+							<img alt="weather icon" id="weather_icon" src="images/tmp_icon.png">
+							<button class="remove_button">X</button>
+						</div>
+						<ul>
+							<li>
+								<h4>Ветер</h4>
+								<p id="wind">?????</p>
+							</li>
+							<li>
+								<h4>Облачность</h4>
+								<p id="cloudiness">?????</p>
+							</li>
+							<li>
+								<h4>Давление</h4>
+								<p id="pressure">?????</p>
+							</li>
+							<li>
+								<h4>Влажность</h4>
+								<p id="humidity">?????</p>
+							</li>
+							<li>
+								<h4>Координаты</h4>
+								<p id="coords">?????</p>
+
+							</li>
+						</ul>
 					</div>
-					<ul>
-						<li>
-							<h4>Ветер</h4>
-							<p>Moderate breeze, 6.0 m/s, N-NW</p>
-						</li>
-						<li>
-							<h4>Облачность</h4>
-							<p>Broken clouds</p>
-						</li>
-						<li>
-							<h4>Давление</h4>
-							<p>1013 hpa</p>
-						</li>
-						<li>
-							<h4>Влажность</h4>
-							<p>52 %</p>
-						</li>
-						<li>
-							<h4>Координаты</h4>
-							<p>[59.88, 30.42]</p>
+				</li>
+			</template>
 
-						</li>
-					</ul>
-				</div>
-			</li>
-
-			<li>
-				<div class="favorite_city">
-					<div class="favorite_city_header">
-						<h3>Helsinki</h3>
-						<span>3°C</span>
-						<img alt="weather icon" src="images/tmp_icon.png">
-						<button class="remove_button">X</button>
-					</div>
-					<ul>
-						<li>
-							<h4>Ветер</h4>
-							<p>Moderate breeze, 6.0 m/s, N-NW</p>
-						</li>
-						<li>
-							<h4>Облачность</h4>
-							<p>Broken clouds</p>
-						</li>
-						<li>
-							<h4>Давление</h4>
-							<p>1013 hpa</p>
-						</li>
-						<li>
-							<h4>Влажность</h4>
-							<p>52 %</p>
-						</li>
-						<li>
-							<h4>Координаты</h4>
-							<p>[59.88, 30.42]</p>
-
-						</li>
-					</ul>
-				</div>
-			</li>
-
-			<li>
-				<div class="favorite_city">
-					<div class="favorite_city_header">
-						<h3>Moscow</h3>
-						<span>5°C</span>
-						<img alt="weather icon" src="images/tmp_icon.png">
-						<button class="remove_button">X</button>
-					</div>
-					<ul>
-						<li>
-							<h4>Ветер</h4>
-							<p>Moderate breeze, 6.0 m/s, N-NW</p>
-						</li>
-						<li>
-							<h4>Облачность</h4>
-							<p>Broken clouds</p>
-						</li>
-						<li>
-							<h4>Давление</h4>
-							<p>1013 hpa</p>
-						</li>
-						<li>
-							<h4>Влажность</h4>
-							<p>52 %</p>
-						</li>
-						<li>
-							<h4>Координаты</h4>
-							<p>[59.88, 30.42]</p>
-
-						</li>
-					</ul>
-				</div>
-			</li>
-
-			<li>
-				<div class="favorite_city">
-					<div class="favorite_city_header">
-						<h3>Helsinki</h3>
-						<span>3°C</span>
-						<img alt="weather icon" src="images/tmp_icon.png">
-						<button class="remove_button">X</button>
-					</div>
-					<ul>
-						<li>
-							<h4>Ветер</h4>
-							<p>Moderate breeze, 6.0 m/s, N-NW</p>
-						</li>
-						<li>
-							<h4>Облачность</h4>
-							<p>Broken clouds</p>
-						</li>
-						<li>
-							<h4>Давление</h4>
-							<p>1013 hpa</p>
-						</li>
-						<li>
-							<h4>Влажность</h4>
-							<p>52 %</p>
-						</li>
-						<li>
-							<h4>Координаты</h4>
-							<p>[59.88, 30.42]</p>
-
-						</li>
-					</ul>
-				</div>
-			</li>
-
-			<li>
-				<div class="favorite_city">
-					<div class="favorite_city_header">
-						<h3>Moscow</h3>
-						<span>5°C</span>
-						<img alt="weather icon" src="images/tmp_icon.png">
-						<button class="remove_button">X</button>
-					</div>
-					<ul>
-						<li>
-							<h4>Ветер</h4>
-							<p>Moderate breeze, 6.0 m/s, N-NW</p>
-						</li>
-						<li>
-							<h4>Облачность</h4>
-							<p>Broken clouds</p>
-						</li>
-						<li>
-							<h4>Давление</h4>
-							<p>1013 hpa</p>
-						</li>
-						<li>
-							<h4>Влажность</h4>
-							<p>52 %</p>
-						</li>
-						<li>
-							<h4>Координаты</h4>
-							<p>[59.88, 30.42]</p>
-
-						</li>
-					</ul>
-				</div>
-			</li>
-
-			<li>
-				<div class="favorite_city">
-					<div class="favorite_city_header">
-						<h3>Helsinki</h3>
-						<span>3°C</span>
-						<img alt="weather icon" src="images/tmp_icon.png">
-						<button class="remove_button">X</button>
-					</div>
-					<ul>
-						<li>
-							<h4>Ветер</h4>
-							<p>Moderate breeze, 6.0 m/s, N-NW</p>
-						</li>
-						<li>
-							<h4>Облачность</h4>
-							<p>Broken clouds</p>
-						</li>
-						<li>
-							<h4>Давление</h4>
-							<p>1013 hpa</p>
-						</li>
-						<li>
-							<h4>Влажность</h4>
-							<p>52 %</p>
-						</li>
-						<li>
-							<h4>Координаты</h4>
-							<p>[59.88, 30.42]</p>
-
-						</li>
-					</ul>
-				</div>
-			</li>
 		</ul>
 	</main>
 </body>
