@@ -57,7 +57,7 @@ function createFavoriteCity(weatherState, list){
 	newFavoriteCity.querySelector('#humidity').textContent = weatherState.main.humidity + "%"
 	newFavoriteCity.querySelector('#coords').textContent = `[${weatherState.coord.lon}, ${weatherState.coord.lat}]`
 	
-	newFavoriteCity.querySelector('#weather_icon').src = `https://openweathermap.org/img/w/${weatherState.weather[0].icon}.png`
+	newFavoriteCity.querySelector('#weather_icon').src = `https://openweathermap.org/img/wn/${weatherState.weather[0].icon}.png`
 	
 
 	li.getElementsByClassName("remove_button")[0].onclick = function(){
@@ -80,7 +80,7 @@ function fillMainCity(weatherState){
 	mainCity.querySelector('#humidity').textContent = weatherState.main.humidity + "%"
 	mainCity.querySelector('#coords').textContent = `[${weatherState.coord.lon}, ${weatherState.coord.lat}]`
 	
-	mainCity.querySelector('#weather_icon').src = `https://openweathermap.org/img/w/${weatherState.weather[0].icon}.png`
+	mainCity.querySelector('#weather_icon').src = `https://openweathermap.org/img/wn/${weatherState.weather[0].icon}@4x.png`
 }
 
 
