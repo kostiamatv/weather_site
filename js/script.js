@@ -189,3 +189,8 @@ window.onload = function(){
 	}
 }
 
+window.addEventListener('offline', function(){
+	alert("Соединение потеряно. Перезагрузите страницу")
+	document.getElementsByClassName("add_button")[0].disabled = true
+	document.getElementsByClassName("update_location")[0].disabled = true
+})
