@@ -21,15 +21,11 @@ function loadCityDataByCoords(latitude, longitude, onSuccess){
 function loadCityDataByUrl(url, onSuccess){
 	var xhr = new XMLHttpRequest()
 	xhr.open('GET', url)
-	xhr.onload = function () {
-		if (xhr.status === 200) {
-			onSuccess(JSON.parse(xhr.response))
-		} else {
-			alert("При обращении к API возникла ошибка, может быть такой город не существует.")
-		}
+	xhr.onload = function() {
+		onSuccess(JSON.parse(xhr.response), xhr.status)
 	}
-	xhr.onerror = function () {
-		alert("При обращении к API возникла ошибка, может быть такой город не существует.")
+	xhr.onerror = function() {
+		onSuccess(null, 123)
 	}
 	xhr.send(null)
 }
@@ -50,7 +46,7 @@ function convertWind(wind){
 
 function createFavoriteCity(list){
 	let template = document.getElementsByClassName("favorite_city_template")[0]
-	let newFavoriteCity = template.content.cloneNode(true).childNodes[1]	
+	let newFavoriteCity = template.content.cloneNode(true).childNodes[1]
 	list.appendChild(newFavoriteCity)
 	return newFavoriteCity
 }
@@ -58,11 +54,11 @@ function createFavoriteCity(list){
 function fillFavoriteCity(weatherState, newFavoriteCity){
 	
 	let cityId = weatherState.id
-
-	newFavoriteCity.getElementsByClassName("remove_button")[0].onclick = function(){
+	newFavoriteCity.id = cityId
+	newFavoriteCity.getElementsByClassName("remove_button")[0].addEventListener("click", function(){
 		document.getElementsByClassName("favorite_cities")[0].removeChild(newFavoriteCity)
 		removeCityFromStorage(cityId)
-	}
+	})
 	newFavoriteCity.querySelector('#favorite_city_name').textContent = weatherState.name
 	newFavoriteCity.querySelector('#favorite_city_temperature').textContent = Math.round(weatherState.main.temp) + "°C"
 	newFavoriteCity.querySelector('#wind').textContent = convertWind(weatherState.wind)
@@ -115,8 +111,16 @@ function removeCityFromStorage(city){
 }
 
 function addCity(city){
+	if (city.trim() === ""){
+		return
+	}
 	var newFavoriteCity = createFavoriteCity(document.getElementsByClassName("favorite_cities")[0])
-	loadCityDataByName(city, cityResponse => {
+	loadCityDataByName(city, (cityResponse, status) => {
+		if(status != 200){
+				document.getElementsByClassName("favorite_cities")[0].removeChild(newFavoriteCity)
+				alert("При обращении к API возникла ошибка, может быть такой город не существует.")
+				return
+			}
 		if (getCitiesFromStorage().includes(cityResponse.id)) {
 			document.getElementsByClassName("favorite_cities")[0].removeChild(newFavoriteCity)
 			alert(`${city} уже есть`)
@@ -166,17 +170,17 @@ window.onload = function(){
         event.preventDefault()
     })
 
-	document.getElementsByClassName("add_button")[0].onclick = function(){
+	document.getElementsByClassName("add_button")[0].addEventListener("click", function(){
 		addCity(document.getElementsByClassName("new_city")[0].value)
 		document.getElementsByClassName("new_city")[0].value = ""
-	}
+	})
 
 	updateLocation()
 	
-	document.getElementsByClassName("update_location")[0].onclick = function(){
+	document.getElementsByClassName("update_location")[0].addEventListener("click", function(){
 		var mainCity = document.getElementsByClassName("current_location")[0]
 		resetMainCity()
-	}
+	})
 	
 
 	let cities = getCitiesFromStorage()
